@@ -11,18 +11,18 @@ User Logout (Token revoke)
 
 ⚙️ Installation & Setup
 
-Clone the Repository
+1. Clone the Repository
 
 git clone <your-repo-url>
 cd project-name
 
 
-Install Dependencies
+2. Install Dependencies
 
 composer install
 
 
-Environment Setup
+3. Environment Setup
 
 cp .env.example .env
 php artisan key:generate
@@ -30,19 +30,19 @@ php artisan key:generate
 
 Update .env with your database credentials.
 
-Run Migrations
+4. Run Migrations
 
 php artisan migrate
 
 
-Install Sanctum
+5. Install Sanctum
 
 composer require laravel/sanctum
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 php artisan migrate
 
 
-Middleware Update
+6. Middleware Update
 In app/Http/Kernel.php, add:
 
 \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
@@ -50,7 +50,7 @@ In app/Http/Kernel.php, add:
 
 inside the api middleware group (if not already added).
 
-Run the Server
+7. Run the Server
 
 php artisan serve
 
